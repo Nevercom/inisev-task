@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Website;
 use Illuminate\Database\Seeder;
+
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +15,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        Website::create([
+            'name' => 'Inisev',
+            'url' => 'https://inisev.com',
+        ]);
+
+        Website::create([
+            'name' => 'Laravel Daily',
+            'url' => 'https://laraveldaily.com',
+        ]);
+
+        Website::create([
+            'name' => 'Laravel News',
+            'url' => 'https://laravel-news.com',
         ]);
     }
 }
