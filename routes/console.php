@@ -1,8 +1,4 @@
 <?php
 
-use Illuminate\Foundation\Inspiring;
-use Illuminate\Support\Facades\Artisan;
-
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote')->hourly();
+Schedule::command('notifications:send')->hourly(); // Send Pending Notifications, adjust the frequency as needed
+Schedule::command('app:maintenance')->daily(); // Run System Maintenance tasks, adjust the frequency as needed
